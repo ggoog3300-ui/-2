@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem('kh-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#087443"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="خضارنا"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="description" content="خضارنا - متجر خضروات وفواكه طازجة في الناصرية">
+<title>خضارنا | الناصرية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div id="gate" class="gate" aria-hidden="true"><span class="leaf">🌿</span><b>خضارنا</b><i class="bar"></i></div>
+<div class="top" aria-hidden="false"><div class="ticker">
+<span>📍 الناصرية، ذي قار، العراق</span><span>💵 الدفع نقداً عند الاستلام</span><span>🥬 خضروات وفواكه طازجة كل يوم</span><span>🛵 توصيل سريع لباب بيتك</span>
+<span>📍 الناصرية، ذي قار، العراق</span><span>💵 الدفع نقداً عند الاستلام</span><span>🥬 خضروات وفواكه طازجة كل يوم</span><span>🛵 توصيل سريع لباب بيتك</span>
+<span>📍 الناصرية، ذي قار، العراق</span><span>💵 الدفع نقداً عند الاستلام</span><span>🥬 خضروات وفواكه طازجة كل يوم</span><span>🛵 توصيل سريع لباب بيتك</span>
+<span>📍 الناصرية، ذي قار، العراق</span><span>💵 الدفع نقداً عند الاستلام</span><span>🥬 خضروات وفواكه طازجة كل يوم</span><span>🛵 توصيل سريع لباب بيتك</span>
+</div></div>
+<header id="siteHeader">
+<div class="wrap head">
+<a class="logo" href="index.html"><span class="leaf">🌿</span><span>خضارنا<small>من المزرعة إلى بيتك — الناصرية</small></span></a>
+<form id="searchForm" class="search"><span class="ico">🔍</span><input id="search" placeholder="ابحث عن طماطم، خيار، بطاطا..." aria-label="بحث" autocomplete="off"><button>بحث</button></form>
+<button class="iconbtn" type="button" data-theme-toggle aria-label="الوضع الليلي">🌙</button>
+<button class="iconbtn" type="button" id="logoutBtn" aria-label="تسجيل الخروج" title="تسجيل الخروج" hidden>🚪</button>
+<button class="btn cartbtn" id="cartOpen" type="button"><span class="cico">🛒</span><span class="lbl">السلة</span><span class="badge-n" id="count">0</span></button>
+</div>
+<nav class="wrap nav"><a href="#home">الرئيسية</a><a href="#categories">الأقسام</a><a href="#products">المنتجات</a><a href="#delivery">التوصيل</a><a href="#contact">اتصل بنا</a></nav>
+</header>
+<main class="wrap">
+<section id="home" class="hero">
+<div class="hero-in">
+<div id="hello" class="hello" hidden></div>
+<span class="pill"><i class="dot"></i> طازجة كل يوم</span>
+<h1>خضروات طازجة<br>من المزرعة إلى <span id="rot" class="rot">بيتك</span></h1>
+<p>تسوّق احتياجات مطبخك بسهولة. نوصل طلبك داخل الناصرية وأجرة التوصيل حسب المنطقة.</p>
+<div class="hero-cta"><button class="btn green cta" id="shopNow" type="button">ابدأ التسوق ←</button><a class="ghost" href="#delivery">كيف يوصل طلبي؟</a></div>
+<ul class="hero-chips"><li>🛵 توصيل داخل الناصرية</li><li>💵 الدفع عند الاستلام</li><li>🥕 اختيار بعناية</li></ul>
+</div>
+<div class="fls" aria-hidden="true">
+<span class="fl" style="--k:26;top:9%;left:6%"><i style="--t:5.5s">🍅</i></span>
+<span class="fl" style="--k:-18;top:46%;left:22%"><i style="--t:7s;--dl:-2s">🥕</i></span>
+<span class="fl" style="--k:34;top:12%;left:30%"><i style="--t:6.3s;--dl:-1s">🥬</i></span>
+<span class="fl" style="--k:-30;top:60%;left:5%"><i style="--t:6.8s;--dl:-3s">🍋</i></span>
+<span class="fl" style="--k:20;top:30%;left:14%"><i style="--t:5.2s;--dl:-4s">🥒</i></span>
+<span class="fl" style="--k:-24;top:68%;left:32%"><i style="--t:7.4s;--dl:-2.5s">🍎</i></span>
+</div>
+<svg class="hero-wave" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 44V22c150 28 300 28 450 8s300-30 450-14 210 20 300 6v22z"/></svg>
+</section>
+<div id="status" class="notice hidden"></div>
+<section id="categories" class="section"><div class="title"><div><h2>تسوّق حسب القسم</h2><p>اختار القسم اللي تحتاجه</p></div></div><div class="cats" id="cats"></div></section>
+<section id="products" class="section"><div class="title"><div><h2 id="productTitle">المنتجات المتوفرة</h2><p>الأسعار بالدينار العراقي، لكل كغم أو وحدة حسب المنتج</p></div><select id="sort" aria-label="الترتيب"><option value="default">الترتيب الافتراضي</option><option value="low">السعر الأقل</option><option value="high">السعر الأعلى</option></select></div><div class="products" id="productsGrid"></div><div id="empty" class="empty" hidden><span>🔎</span><p>لا توجد منتجات مطابقة للبحث.</p></div></section>
+<section id="delivery" class="benefits">
+<div class="reveal" style="--i:0"><span>🥬</span><b>منتجات طازجة</b><small>نختار المنتجات بعناية</small></div>
+<div class="reveal" style="--i:1"><span>🛵</span><b>توصيل محلي</b><small>الناصرية والمناطق المتاحة</small></div>
+<div class="reveal" style="--i:2"><span>💵</span><b>الدفع عند الاستلام</b><small>نقداً بعد وصول الطلب</small></div>
+<div class="reveal" style="--i:3"><span>📍</span><b>أجرة حسب المنطقة</b><small>تظهر حسب المنطقة المختارة</small></div>
+</section>
+</main>
+<footer id="contact"><div class="wrap foot"><div><h2>🌿 خضارنا</h2><p>متجر خضروات وفواكه يخدم أهالي الناصرية.</p></div></div><div class="wrap copy">© <span id="year"></span> خضارنا — جميع الحقوق محفوظة</div></footer>
+<div id="overlay" class="overlay"><aside class="drawer" role="dialog" aria-label="سلة المشتريات"><div class="dhead"><h2>🧺 سلة المشتريات</h2><button class="close" id="cartClose" type="button" aria-label="إغلاق">✕</button></div><div id="cartItems"></div><div id="checkout"></div></aside></div>
+
+<section id="orderStatusPage" class="order-status-page hidden" aria-label="حالة الطلب">
+  <div class="wrap osp-wrap">
+    <a class="logo" href="index.html"><span class="leaf">🌿</span><span>خضارنا</span></a>
+    <div class="osp-status">
+      <svg class="check" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg>
+      <h2 id="ospTitle">تم إرسال الطلب</h2>
+      <p id="ospMsg">تم استلام طلبك بنجاح. رقم الطلب: <b id="ospNumber"></b><br>سنتواصل معك هاتفياً لتأكيد التوصيل. الدفع نقداً عند الاستلام.</p>
+    </div>
+    <button class="btn danger wide" id="ospCancelBtn" type="button">إلغاء الطلب</button>
+    <div class="osp-table-wrap">
+      <h3>تفاصيل الطلب</h3>
+      <div class="table-scroll">
+        <table class="admin-table">
+          <thead><tr><th>المنتج</th><th>الكمية</th><th>السعر</th><th>الإجمالي</th></tr></thead>
+          <tbody id="ospItems"></tbody>
+        </table>
+      </div>
+    </div>
+    <button class="btn secondary wide" id="ospBack" type="button">متابعة التسوق</button>
+  </div>
+</section>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<button class="fab" id="toTop" type="button" aria-label="للأعلى">↑</button>
+<script src="config.js"></script><script src="fx.js"></script><script src="app.js"></script>
+<script src="pwa.js" defer></script>
+</body></html>
